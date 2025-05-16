@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cad54ae9-45c8-4880-9ae6-72d739f4f966" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/One_Core_One_Mace_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/spigot_api_1_21_R0_1_20240807_214924_87_javadoc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/spigot_api_1_21_R0_1_20240807_214924_87_shaded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/spigot_api_1_21_R0_1_20240807_214924_87_sources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/One-Core-One-Mace.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Commands/OneCoreOneMaceCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Core/MaceHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/HolderEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/MaceEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/OneCoreOneMace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/PlaceHolders/AboutHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/TabCompletions/OneCoreOneMaceTab.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Utils/CwRBetterConsoleLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Utils/CwRPermissionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Utils/TextStrings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/plugin.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2xBoOBaCagmTsYHC6XhwuFWFhzl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Shehara/Programming/Java/minecraft/DEP/1.21 API/spigot-api-1.21-R0.1-20240807.214924-87-sources.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.24447031"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cad54ae9-45c8-4880-9ae6-72d739f4f966" name="Changes" comment="" />
+      <created>1747420793809</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747420793809</updated>
+    </task>
+    <servers />
+  </component>
+</project>

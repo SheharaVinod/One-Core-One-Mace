@@ -1,0 +1,8 @@
+name: OneCoreOneMace
+main: lk.cwresports.OneCoreOneMace.OneCoreOneMace
+version: 1.0.0
+api-version: 1.21
+website: cwresports.lk
+author: Mr_Unknown
+description: This plugin allows you to obtain only one of the most overpowered weapons in Minecraft, which is the mace.
+

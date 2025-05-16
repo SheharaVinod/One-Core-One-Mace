@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="One-Core-One-Mace:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/One_Core_One_Mace_jar</output-path>
+    <root id="archive" name="One-Core-One-Mace.jar">
+      <element id="module-output" name="One-Core-One-Mace" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/config.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/plugin.yml" />
+    </root>
+  </artifact>
+</component>
