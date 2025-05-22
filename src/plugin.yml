@@ -6,3 +6,19 @@ website: cwresports.lk
 author: Mr_Unknown
 description: This plugin allows you to obtain only one of the most overpowered weapons in Minecraft, which is the mace.
 
+commands:
+  one-core-one-mace:
+    usage: /one-core-one-mace <help>
+    permission: cwr-core.one-core-one-mace.admin
+    permission-message: You don't have permission to execute this command.
+    description: this is the main command of this plugin.
+    aliases:
+      - ocom
+
+permissions:
+  cwr-core.one-core-one-mace.admin:
+    default: op
+    description: all admins permission for this plugin.
+  cwr-core.one-core-one-mace.bypass-holder:
+    default: op
+    description: bypass mace events.
