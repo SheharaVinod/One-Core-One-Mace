@@ -4,32 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cad54ae9-45c8-4880-9ae6-72d739f4f966" name="Changes" comment="Init">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/API/Events/HeavyCoreDropEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/API/Events/MaceHolderChangeEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/API/Events/MacePickUpEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Core/HoldersEventScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/CanselMaceAutoCrafting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/CanselMaceCrafting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/MaceDropAndPickUpEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/MaceHolderChangeEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/RemoveAnyMaceOnClickingInventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/RemoveAnyMaceOnJoin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/RemoveAnyMaceOnUsing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Utils/ConfigPaths.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Utils/CwRCommandManager.java" afterDir="false" />
+    <list default="true" id="cad54ae9-45c8-4880-9ae6-72d739f4f966" name="Changes" comment="Continue">
+      <change afterPath="$PROJECT_DIR$/tests/TODO" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Commands/OneCoreOneMaceCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Commands/OneCoreOneMaceCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Core/HolderEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Core/FoundHolderEventListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Core/MaceHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Core/MaceHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/HolderEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Core/HolderEventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/MaceEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/MaceEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/CanselMaceAutoCrafting.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/CanselMaceCrafting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/CanselMaceCrafting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/MaceDropAndPickUpEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/MaceDropAndPickUpEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/RemoveAnyMaceOnClickingInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Listeners/RemoveAnyMaceOnClickingInventory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/OneCoreOneMace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/OneCoreOneMace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/TabCompletions/OneCoreOneMaceTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/TabCompletions/OneCoreOneMaceTab.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Utils/CwRPermissionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Utils/CwRPermissionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Utils/TextStrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Utils/TextStrings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Utils/ConfigPaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Utils/ConfigPaths.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Utils/CwRCommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/cwresports/OneCoreOneMace/Utils/CwRCommandManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,9 +49,10 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Shehara/Programming/Java/minecraft/DEP/1.21 API/spigot-api-1.21-R0.1-20240807.214924-87-sources.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.24447031&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
@@ -86,11 +75,20 @@
       <option name="project" value="LOCAL" />
       <updated>1747422773394</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Continue">
+      <option name="closed" value="true" />
+      <created>1747947113073</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747947113073</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init" />
+    <MESSAGE value="Continue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Continue" />
   </component>
 </project>

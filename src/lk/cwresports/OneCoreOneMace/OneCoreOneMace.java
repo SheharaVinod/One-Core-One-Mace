@@ -1,7 +1,7 @@
 package lk.cwresports.OneCoreOneMace;
 
 import lk.cwresports.OneCoreOneMace.Commands.OneCoreOneMaceCommand;
-import lk.cwresports.OneCoreOneMace.Core.HolderEventListener;
+import lk.cwresports.OneCoreOneMace.Core.FoundHolderEventListener;
 import lk.cwresports.OneCoreOneMace.Core.MaceHolder;
 import lk.cwresports.OneCoreOneMace.Listeners.*;
 import lk.cwresports.OneCoreOneMace.TabCompletions.OneCoreOneMaceTab;
@@ -23,7 +23,6 @@ public class OneCoreOneMace extends JavaPlugin {
 
         // register core classes.
         MaceHolder.register(this);
-        MaceHolder.loadOfflineMaceHolderUsingConfig();
 
         // register commands.
         Objects.requireNonNull(getCommand(CwRCommandManager.ONE_CORE_ONE_MACE)).setExecutor(new OneCoreOneMaceCommand());
@@ -35,7 +34,7 @@ public class OneCoreOneMace extends JavaPlugin {
         MaceEventListener.Register(this);
         MaceHolderChangeEventListener.register(this);
 
-        HolderEventListener.register(this);
+        FoundHolderEventListener.register(this);
         RemoveAnyMaceOnJoin.register(this);
         RemoveAnyMaceOnClickingInventory.register(this);
         CanselMaceCrafting.register(this);

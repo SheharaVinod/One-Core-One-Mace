@@ -12,7 +12,7 @@ general-plugin-settings:
   how-long-he-should-be-stay-in-the-server-in-minutes: 120 # 2 hours.
   how-long-he-can-remove-his-mace-from-his-inventory-in-minutes: 15
 
-  can-a-mace-craft-using-auto-crafter: false
+  # can-a-mace-craft-using-auto-crafter: false # deprecated.
   remove-extra-mace-on-join: true
   remove-extra-mace-on-clicking-inventory: false # recommend to turn off this.
   remove-extra-mace-on-using: false # recommend to turn off this.
@@ -20,6 +20,7 @@ general-plugin-settings:
 # please don't change this details.
 mace-holder-details:
   current-mace-holder: "null"
+  is_heavy_core_dropped: false
   cancel-heavy-core-drop-event: false
   holder-last-logout: "n/a"
   virtual-day-start: "n/a"

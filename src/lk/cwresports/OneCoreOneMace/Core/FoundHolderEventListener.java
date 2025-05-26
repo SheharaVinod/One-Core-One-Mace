@@ -6,7 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 
-public class HolderEventListener implements Listener {
+public class FoundHolderEventListener implements Listener {
 
     @EventHandler
     public void onCoreDropEvent(HeavyCoreDropEvent event) {
@@ -22,6 +22,6 @@ public class HolderEventListener implements Listener {
 
 
     public static void register(Plugin plugin) {
-        Bukkit.getServer().getPluginManager().registerEvents(new HolderEventListener(), plugin);
+        Bukkit.getServer().getPluginManager().registerEvents(new FoundHolderEventListener(), plugin);
     }
 }

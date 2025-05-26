@@ -34,6 +34,24 @@ public class RemoveAnyMaceOnClickingInventory implements Listener {
         }
     }
 
+    @EventHandler
+    public void onItemCraft(InventoryClickEvent event) {
+        // register mace crafting player.
+        if (event.getWhoClicked() instanceof Player player) {
+            if (MaceHolder.getOfflinePlayer() == player) {
+                return;
+            }
+
+            if (MaceHolder.getOfflinePlayer() == null) {
+                ItemStack currentItem = event.getCurrentItem();
+                if (currentItem == null) return;
+                if (currentItem.getType() == Material.MACE) {
+                    MaceHolder.setOfflineMaceHolderAlsoForConfig(player);
+                }
+            }
+        }
+    }
+
     private boolean we_need_to_remove_the_mace_on_clicking_inventory() {
         return plugin.getConfig().getBoolean(ConfigPaths.REMOVE_EXTRA_MACE_ON_CLICK, ConfigPaths.REMOVE_EXTRA_MACE_ON_CLICK_DEFAULT);
     }

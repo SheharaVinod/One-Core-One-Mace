@@ -34,4 +34,16 @@ public class MaceDropAndPickUpEventListener implements Listener {
         }
     }
 
+    @EventHandler
+    public void onHeavyCorePicUpEvent(EntityPickupItemEvent event) {
+        if (event.getEntity() instanceof Player player) {
+            if (MaceHolder.getOfflinePlayer() != player) {
+                ItemStack itemStack = event.getItem().getItemStack();
+                if (itemStack.getType() == Material.HEAVY_CORE) {
+                    MaceHolder.cansel_heavy_core_drop_event(true);
+                }
+            }
+        }
+    }
+
 }

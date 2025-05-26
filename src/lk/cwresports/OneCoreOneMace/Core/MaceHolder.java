@@ -10,7 +10,6 @@ import java.util.UUID;
 public class MaceHolder {
     private static OfflinePlayer offlinePlayer = null;
     private static Plugin plugin;
-    private static boolean is_dropped = false;
 
     public static OfflinePlayer getOfflinePlayer() {
         return offlinePlayer;
@@ -36,11 +35,12 @@ public class MaceHolder {
     }
 
     public static void setAsDropped(boolean b) {
-        is_dropped = b;
+        plugin.getConfig().set(ConfigPaths.IS_HEAVY_CORE_DROPPED, b);
+        plugin.saveConfig();
     }
 
     public static boolean isMaceDropped() {
-        return is_dropped;
+        return plugin.getConfig().getBoolean(ConfigPaths.IS_HEAVY_CORE_DROPPED, ConfigPaths.IS_HEAVY_CORE_DROPPED_DEFAULT);
     }
 
     public static boolean is_cansel_heavy_core_drop_event() {
@@ -53,10 +53,11 @@ public class MaceHolder {
     }
 
     public static boolean can_crafting_a_mace() {
-        return true;
+        return offlinePlayer == null;
     }
 
     public static void register(Plugin plugin) {
         MaceHolder.plugin = plugin;
+        MaceHolder.loadOfflineMaceHolderUsingConfig();
     }
 }

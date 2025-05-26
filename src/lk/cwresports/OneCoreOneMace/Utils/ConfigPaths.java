@@ -19,5 +19,8 @@ public class ConfigPaths {
     public static final String REMOVE_EXTRA_MACE_ON_USE = "general-plugin-settings.remove-extra-mace-on-using";
     public static final boolean REMOVE_EXTRA_MACE_ON_USE_DEFAULT = false;
 
+    public static final String IS_HEAVY_CORE_DROPPED = "mace-holder-details.is_heavy_core_dropped";
+    public static final boolean IS_HEAVY_CORE_DROPPED_DEFAULT = false;
+
 
 }

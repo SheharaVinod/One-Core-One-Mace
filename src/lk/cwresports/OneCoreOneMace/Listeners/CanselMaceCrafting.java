@@ -15,7 +15,7 @@ public class CanselMaceCrafting implements Listener {
         Recipe recipe = event.getRecipe();
         if (recipe == null) return;
         if (recipe.getResult().getType() == Material.MACE) {
-            if (MaceHolder.can_crafting_a_mace()) {
+            if (!MaceHolder.can_crafting_a_mace()) {
                 recipe.getResult().setType(Material.AIR);
             }
         }
