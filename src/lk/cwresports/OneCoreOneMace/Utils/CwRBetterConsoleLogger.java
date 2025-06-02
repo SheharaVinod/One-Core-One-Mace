@@ -3,12 +3,16 @@ package lk.cwresports.OneCoreOneMace.Utils;
 import org.bukkit.plugin.Plugin;
 
 public class CwRBetterConsoleLogger {
-    private static String pluginPrefix = "[CwRBetterConsoleLogger]";
     private static Plugin plugin;
+    private static String PREFIX = "&7[&6CwR&f-OCOM&7]&r ";
 
-    public static void setPluginPrefix(Plugin plugin, String prefix) {
+    public static void registerLogger(Plugin plugin, String prefix) {
         CwRBetterConsoleLogger.plugin = plugin;
-        pluginPrefix = TextStrings.colorize("&7[&r" + prefix + "&7]&r ");
+        PREFIX = TextStrings.colorize(prefix + " ", true);
+    }
+
+    public static String getPREFIX() {
+        return PREFIX;
     }
 
     public static void log(String massage) {
@@ -19,7 +23,7 @@ public class CwRBetterConsoleLogger {
         if (withoutPrefix) {
             plugin.getServer().getConsoleSender().sendMessage(massage);
         } else {
-            plugin.getServer().getConsoleSender().sendMessage(pluginPrefix + massage);
+            plugin.getServer().getConsoleSender().sendMessage(TextStrings.colorize(massage));
         }
     }
 }

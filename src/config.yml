@@ -6,15 +6,18 @@
 #  ╚██████╗╚███╔███╔╝██║  ██║
 #   ╚═════╝ ╚══╝╚══╝ ╚═╝  ╚═╝  (Dev)
 # -----------------------------------
+# available placeHolders. {
+#   %cwr_ocom_mace_holder%
+# }
 # One core one mace plugin config.
 general-plugin-settings:
   how-long-a-holder-can-be-offline-in-minutes: 2160 # 1 day and 6 hours.
-  how-long-he-should-be-stay-in-the-server-in-minutes: 120 # 2 hours.
+  how-long-he-should-be-stay-in-the-server-in-minutes: 90 # 1 hour and 30 minutes.
   how-long-he-can-remove-his-mace-from-his-inventory-in-minutes: 15
 
-  # can-a-mace-craft-using-auto-crafter: false # deprecated.
+  can-a-mace-craft-using-auto-crafter: false
   remove-extra-mace-on-join: true
-  remove-extra-mace-on-clicking-inventory: false # recommend to turn off this.
+  remove-extra-mace-on-clicking-inventory: true
   remove-extra-mace-on-using: false # recommend to turn off this.
 
 # please don't change this details.
@@ -22,18 +25,18 @@ mace-holder-details:
   current-mace-holder: "null"
   is_heavy_core_dropped: false
   cancel-heavy-core-drop-event: false
-  holder-last-logout: "n/a"
-  virtual-day-start: "n/a"
-  virtual-day-end: "n/a"
-  virtual-day-next: "n/a"
-  virtual-day-login: "n/a"
-  virtual-day-logout: "n/a"
+  virtual-day-start: 0
+  virtual-day-end: 0
+  virtual-play-time: 0
 
 TextStrings:
+  prefix: "&7[&6CwR&7]&r"
   player-not-available: "n/a"
 
-  mace-holder-warnings:
-    prefix: "&4[WARN]&r "
+  mace-holder-massages:
     holder-remove-mace-from-inventory: "&7You are not able to remove mace from your inventory. if did not you get it back to your inventory. mace will be disappear."
+    when-mace-holder-set: "&7Now you are the mace holder."
+    when-mace-holder-null: "&7There are no longer a mace holder. find a heavy core as fast as possible."
+    when-mace-holder-change-this-massage-to-old-holder: "&7You are loosing your mace."
 
 

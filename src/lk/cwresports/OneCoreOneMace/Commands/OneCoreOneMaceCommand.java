@@ -1,8 +1,10 @@
 package lk.cwresports.OneCoreOneMace.Commands;
 
+import lk.cwresports.OneCoreOneMace.Core.MaceHolder;
 import lk.cwresports.OneCoreOneMace.Utils.ConfigPaths;
 import lk.cwresports.OneCoreOneMace.Utils.CwRCommandManager;
 import lk.cwresports.OneCoreOneMace.Utils.CwRPermissionManager;
+import lk.cwresports.OneCoreOneMace.Utils.TextStrings;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -51,7 +53,7 @@ public class OneCoreOneMaceCommand implements CommandExecutor {
 
     private boolean drop_heavy_core(CommandSender commandSender, Command command, String s, String[] strings) {
         // Enable or disable
-
+        // MaceHolder.cansel_heavy_core_drop_event(TODO:\);
 
         return true;
     }
@@ -65,8 +67,8 @@ public class OneCoreOneMaceCommand implements CommandExecutor {
 
     private boolean reset_mace_holder(CommandSender commandSender, Command command, String s, String[] strings) {
         // reset mace holder to null.
-
-
+        MaceHolder.setOfflineMaceHolderAlsoForConfig(null);
+        commandSender.sendMessage(TextStrings.colorize("&6Reset mace holder to null."));
         return true;
     }
 
@@ -77,9 +79,11 @@ public class OneCoreOneMaceCommand implements CommandExecutor {
                 if (strings.length > 2) {
                     if (strings[2].equalsIgnoreCase("true")) {
                         plugin.getConfig().set(ConfigPaths.REMOVE_EXTRA_MACE_ON_JOIN, true);
+                        commandSender.sendMessage(TextStrings.colorize("&6Remove extra mace on join true."));
                     }
                     if (strings[2].equalsIgnoreCase("false")) {
                         plugin.getConfig().set(ConfigPaths.REMOVE_EXTRA_MACE_ON_JOIN, false);
+                        commandSender.sendMessage(TextStrings.colorize("&6Remove extra mace on join false."));
                     }
                 }
             }
@@ -87,9 +91,23 @@ public class OneCoreOneMaceCommand implements CommandExecutor {
                 if (strings.length > 2) {
                     if (strings[2].equalsIgnoreCase("true")) {
                         plugin.getConfig().set(ConfigPaths.REMOVE_EXTRA_MACE_ON_CLICK, true);
+                        commandSender.sendMessage(TextStrings.colorize("&6Remove extra mace on clicking inventory true."));
                     }
                     if (strings[2].equalsIgnoreCase("false")) {
                         plugin.getConfig().set(ConfigPaths.REMOVE_EXTRA_MACE_ON_CLICK, false);
+                        commandSender.sendMessage(TextStrings.colorize("&6Remove extra mace on clicking inventory false."));
+                    }
+                }
+            }
+            if (strings[1].equalsIgnoreCase("using")) {
+                if (strings.length > 2) {
+                    if (strings[2].equalsIgnoreCase("true")) {
+                        plugin.getConfig().set(ConfigPaths.REMOVE_EXTRA_MACE_ON_USE, true);
+                        commandSender.sendMessage(TextStrings.colorize("&6Remove extra mace on using true."));
+                    }
+                    if (strings[2].equalsIgnoreCase("false")) {
+                        plugin.getConfig().set(ConfigPaths.REMOVE_EXTRA_MACE_ON_USE, false);
+                        commandSender.sendMessage(TextStrings.colorize("&6Remove extra mace on using false."));
                     }
                 }
             }

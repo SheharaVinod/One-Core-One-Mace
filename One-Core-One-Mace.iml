@@ -20,5 +20,6 @@
     <orderEntry type="library" name="spigot-api-1.21-R0.1-20240807.214924-87-shaded" level="project" />
     <orderEntry type="library" name="spigot-api-1.21-R0.1-20240807.214924-87-javadoc" level="project" />
     <orderEntry type="library" name="spigot-api-1.21-R0.1-20240807.214924-87-sources" level="project" />
+    <orderEntry type="library" name="PlaceholderAPI-2.11.6" level="project" />
   </component>
 </module>
