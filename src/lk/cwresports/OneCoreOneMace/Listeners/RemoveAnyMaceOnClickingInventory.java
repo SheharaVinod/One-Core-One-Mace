@@ -2,6 +2,7 @@ package lk.cwresports.OneCoreOneMace.Listeners;
 
 import lk.cwresports.OneCoreOneMace.Core.MaceHolder;
 import lk.cwresports.OneCoreOneMace.Utils.ConfigPaths;
+import lk.cwresports.OneCoreOneMace.Utils.CwRBetterConsoleLogger;
 import lk.cwresports.OneCoreOneMace.Utils.CwRPermissionManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -17,6 +18,7 @@ public class RemoveAnyMaceOnClickingInventory implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
+        CwRBetterConsoleLogger.debug("InventoryClickEvent executing..(RemoveAnyMaceOnClickingInventory.onInventoryClick)");
         if (we_need_to_remove_the_mace_on_clicking_inventory()) {
             if (event.getWhoClicked() instanceof Player player) {
                 if (MaceHolder.getOfflinePlayer() == player) {
@@ -36,6 +38,7 @@ public class RemoveAnyMaceOnClickingInventory implements Listener {
 
     @EventHandler
     public void onItemCraft(InventoryClickEvent event) {
+        CwRBetterConsoleLogger.debug("InventoryClickEvent executing..(RemoveAnyMaceOnClickingInventory.onItemCraft)");
         // register mace crafting player.
         if (event.getWhoClicked() instanceof Player player) {
             if (MaceHolder.getOfflinePlayer() == player) {

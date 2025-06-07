@@ -17,6 +17,10 @@ public class ConfigPaths {
     public static final String CAN_CRAFT_MACE_USING_CRAFTER = "general-plugin-settings.can-a-mace-craft-using-auto-crafter";
     public static final boolean CAN_CRAFT_MACE_USING_CRAFTER_DEFAULT = false;
 
+    //
+    public static final String DEBUG_MOD = "general-plugin-settings.debug_mod";
+    public static final boolean DEBUG_MOD_DEFAULT = false;
+
     // remove mace events
     public static final String REMOVE_EXTRA_MACE_ON_JOIN = "general-plugin-settings.remove-extra-mace-on-join";
     public static final boolean REMOVE_EXTRA_MACE_ON_JOIN_DEFAULT = true;

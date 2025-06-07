@@ -22,6 +22,11 @@ public class MaceHolderDropHisWorthEvent extends Event {
 
     @Override
     public HandlerList getHandlers() {
-        return null;
+        return handlerList;
+    }
+
+
+    public static HandlerList getHandlerList() {
+        return handlerList;
     }
 }

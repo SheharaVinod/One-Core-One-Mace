@@ -2,6 +2,7 @@ package lk.cwresports.OneCoreOneMace.Listeners;
 
 import lk.cwresports.OneCoreOneMace.Core.MaceHolder;
 import lk.cwresports.OneCoreOneMace.Utils.ConfigPaths;
+import lk.cwresports.OneCoreOneMace.Utils.CwRBetterConsoleLogger;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -16,6 +17,7 @@ public class RemoveAnyMaceOnUsing implements Listener {
 
     @EventHandler
     public void onInteracting(PlayerInteractEvent event) {
+        CwRBetterConsoleLogger.debug("PlayerInteractEvent executing..(RemoveAnyMaceOnUsing.onInteracting)");
         if (we_need_to_remove_the_mace_on_using()) {
             Player player = event.getPlayer();
             if (MaceHolder.getOfflinePlayer() != player) {

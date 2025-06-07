@@ -15,6 +15,12 @@ public class CwRBetterConsoleLogger {
         return PREFIX;
     }
 
+    public static void debug(String massage) {
+        if (plugin.getConfig().getBoolean(ConfigPaths.DEBUG_MOD, ConfigPaths.DEBUG_MOD_DEFAULT)) {
+            log(massage);
+        }
+    }
+
     public static void log(String massage) {
         log(massage, false);
     }

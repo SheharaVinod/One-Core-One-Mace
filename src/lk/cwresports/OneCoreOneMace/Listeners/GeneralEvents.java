@@ -1,7 +1,9 @@
 package lk.cwresports.OneCoreOneMace.Listeners;
 
+import lk.cwresports.OneCoreOneMace.Core.HoldersEventScheduler;
 import lk.cwresports.OneCoreOneMace.Core.MaceHolder;
 import lk.cwresports.OneCoreOneMace.Utils.ConfigPaths;
+import lk.cwresports.OneCoreOneMace.Utils.CwRBetterConsoleLogger;
 import lk.cwresports.OneCoreOneMace.Utils.CwRNameSpaceKeys;
 import lk.cwresports.OneCoreOneMace.Utils.CwRPermissionManager;
 import org.bukkit.Bukkit;
@@ -13,6 +15,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.CrafterCraftEvent;
 import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.inventory.CraftItemEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.world.LootGenerateEvent;
 import org.bukkit.inventory.CraftingInventory;
 import org.bukkit.inventory.ItemStack;
@@ -31,15 +36,16 @@ public class GeneralEvents implements Listener {
 
     @EventHandler
     public void onFistTimePlayerPickUpHeavyCore(EntityPickupItemEvent event) {
+        CwRBetterConsoleLogger.debug("EntityPickupItemEvent executing..(General Event)");
         if (event.getEntity() instanceof Player player) {
             ItemStack pickedItem = event.getItem().getItemStack();
             ItemMeta itemMeta = pickedItem.getItemMeta();
 
-            if (pickedItem.getType() != Material.HEAVY_CORE) {
+            if (!(pickedItem.getType() == Material.HEAVY_CORE || pickedItem.getType() == Material.MACE)) {
                 return;
             }
 
-            // clear heavy core if another one.
+            // clear heavy core if another heavy core.
             if (MaceHolder.getOfflinePlayer() == player) {
                 if (itemMeta == null) {
                     pickedItem.setType(Material.AIR);
@@ -47,6 +53,7 @@ public class GeneralEvents implements Listener {
                 }
                 PersistentDataContainer dataContainer = itemMeta.getPersistentDataContainer();
                 NamespacedKey cwrMaceHolder = new NamespacedKey(plugin, CwRNameSpaceKeys.CWR_MACE_HOLDER);
+
 
                 if (dataContainer.has(cwrMaceHolder, PersistentDataType.STRING)) {
                     String uuid = dataContainer.get(cwrMaceHolder, PersistentDataType.STRING);
@@ -82,6 +89,14 @@ public class GeneralEvents implements Listener {
                     pickedItem.setType(Material.AIR);
                     return;
                 }
+
+                if (!CwRPermissionManager.hasHolderBypass(player)) {
+                    if (!MaceHolder.isMaceDropped()) {
+                        pickedItem.setType(Material.AIR);
+                        return;
+                    }
+                }
+
                 PersistentDataContainer dataContainer = itemMeta.getPersistentDataContainer();
                 NamespacedKey cwrMaceHolder = new NamespacedKey(plugin, CwRNameSpaceKeys.CWR_MACE_HOLDER);
 
@@ -98,6 +113,7 @@ public class GeneralEvents implements Listener {
 
     @EventHandler
     public void onPlayerCraftMaceEvent(CraftItemEvent event) {
+        CwRBetterConsoleLogger.debug("CraftItemEvent executing..(General Event)");
         Recipe recipe = event.getRecipe();
         ItemStack result = recipe.getResult();
         if (result.getType() != Material.MACE) {
@@ -108,6 +124,7 @@ public class GeneralEvents implements Listener {
         ItemStack[] matrix = craftingInv.getMatrix();
 
         for (ItemStack untilHeavyCore : matrix) {
+            if (untilHeavyCore == null) return;
             if (untilHeavyCore.getType() != Material.HEAVY_CORE) {
                 continue;
             }
@@ -134,6 +151,7 @@ public class GeneralEvents implements Listener {
 
     @EventHandler
     public void canselCrafterCraftItemEvent(CrafterCraftEvent event) {
+        CwRBetterConsoleLogger.debug("CrafterCraftEvent executing..(General Event)");
         boolean can_craft_using_crafter = plugin.getConfig().getBoolean(ConfigPaths.CAN_CRAFT_MACE_USING_CRAFTER, ConfigPaths.CAN_CRAFT_MACE_USING_CRAFTER_DEFAULT);
         if (can_craft_using_crafter) return;
 
@@ -145,6 +163,7 @@ public class GeneralEvents implements Listener {
 
     @EventHandler
     public void onLootGenerateEventCanselIfAHeavyCore(LootGenerateEvent event) {
+        CwRBetterConsoleLogger.debug("LootGenerateEvent executing..(General Event)");
         List<ItemStack> loot = event.getLoot();
         loot.removeIf(itemStack -> {
             if (itemStack.getType() != Material.HEAVY_CORE) {
@@ -160,6 +179,7 @@ public class GeneralEvents implements Listener {
 
     @EventHandler
     public void ifSomeOtherPlayerGetTheMaceOrHeavyCore(EntityPickupItemEvent event) {
+        CwRBetterConsoleLogger.debug("EntityPickupItemEvent executing..(General Event)");
         if (!(event.getEntity() instanceof Player player)) return;
         ItemStack itemStack = event.getItem().getItemStack();
         // check it is a mace or a heavy core.
@@ -183,6 +203,54 @@ public class GeneralEvents implements Listener {
 
                 MaceHolder.setAsDropped(false);
                 MaceHolder.setOfflineMaceHolderAlsoForConfig(player);
+            }
+        }
+    }
+
+    @EventHandler
+    public void onInventoryClickByAnotherPlayer(InventoryClickEvent event) {
+        ItemStack currentItem = event.getCurrentItem();
+        if (!(event.getWhoClicked() instanceof Player clickedPlayer)) {
+            return;
+        }
+
+        if (currentItem == null) {
+            return;
+        }
+
+        if (clickedPlayer == MaceHolder.getOfflinePlayer()) return;
+
+        if (MaceHolder.getOfflinePlayer() != null && MaceHolder.getOfflinePlayer().isOnline()) {
+            Player maceHolder = MaceHolder.getOfflinePlayer().getPlayer();
+            if (maceHolder != null) {
+                if (!maceHolder.getInventory().contains(Material.MACE)) {
+                    MaceHolder.setAsDropped(true);
+                }
+
+                if (currentItem.getType() == Material.MACE) {
+                    MaceHolder.setOfflineMaceHolderAlsoForConfig(clickedPlayer);
+                }
+            }
+        }
+    }
+
+    @EventHandler
+    public void onPlayerQuiteTheGame(PlayerQuitEvent event) {
+        Player player = event.getPlayer();
+        if (player == MaceHolder.getOfflinePlayer()) {
+            HoldersEventScheduler.saveData();
+            if (!player.getInventory().contains(Material.MACE)) {
+                MaceHolder.setAsDropped(true);
+            }
+        }
+    }
+
+    @EventHandler
+    public void onPlayerJoinToTheGame(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+        if (player == MaceHolder.getOfflinePlayer()) {
+            if (!player.getInventory().contains(Material.MACE)) {
+                MaceHolder.setAsDropped(true);
             }
         }
     }

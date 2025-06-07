@@ -25,16 +25,20 @@ public class SendMassagesUsingAPI implements Listener {
 
     @EventHandler
     public void onMaceHolderChangeEvent(MaceHolderChangeEvent event) {
-        if (event.getOldHolder().isOnline()) {
-            Player oldHolder = event.getOldHolder().getPlayer();
-            if (oldHolder == null) return;
-            oldHolder.sendMessage(TextStrings.MACE_HOLDER_CHANGE_SEND_TO_OLD_ONE_MASSAGE);
+        if (event.getOldHolder() != null) {
+            if (event.getOldHolder().isOnline()) {
+                Player oldHolder = event.getOldHolder().getPlayer();
+                if (oldHolder == null) return;
+                oldHolder.sendMessage(TextStrings.colorize(TextStrings.MACE_HOLDER_CHANGE_SEND_TO_OLD_ONE_MASSAGE));
+            }
         }
 
-        if (event.getNewHolder().isOnline()) {
-            Player maceHolder = event.getNewHolder().getPlayer();
-            if (maceHolder == null) return;
-            maceHolder.sendMessage(TextStrings.colorize(TextStrings.MACE_HOLDER_SET));
+        if (event.getNewHolder() != null) {
+            if (event.getNewHolder().isOnline()) {
+                Player maceHolder = event.getNewHolder().getPlayer();
+                if (maceHolder == null) return;
+                maceHolder.sendMessage(TextStrings.colorize(TextStrings.MACE_HOLDER_SET));
+            }
         }
     }
 
@@ -45,7 +49,7 @@ public class SendMassagesUsingAPI implements Listener {
             if (MaceHolder.getOfflinePlayer().isOnline()) {
                 Player player = MaceHolder.getOfflinePlayer().getPlayer();
                 if (player == null) return;
-                player.sendMessage(TextStrings.HOLDER_REMOVE_MACE_FROM_HIS_INV_MASSAGE);
+                player.sendMessage(TextStrings.colorize(TextStrings.HOLDER_REMOVE_MACE_FROM_HIS_INV_MASSAGE));
             }
         }
     }
@@ -54,7 +58,7 @@ public class SendMassagesUsingAPI implements Listener {
     public void onMaceHolderNullEvent(MaceHolderNullEvent event) {
         plugin.getServer().getOnlinePlayers().forEach((player -> {
             if (player == null) return;
-            player.sendMessage(TextStrings.MACE_HOLDER_NULL_MASSAGE);
+            player.sendMessage(TextStrings.colorize(TextStrings.MACE_HOLDER_NULL_MASSAGE));
         }));
     }
 

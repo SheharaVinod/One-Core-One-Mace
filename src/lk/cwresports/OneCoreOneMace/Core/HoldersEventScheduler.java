@@ -2,6 +2,7 @@ package lk.cwresports.OneCoreOneMace.Core;
 
 
 import lk.cwresports.OneCoreOneMace.Utils.ConfigPaths;
+import lk.cwresports.OneCoreOneMace.Utils.CwRBetterConsoleLogger;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -51,11 +52,13 @@ public class HoldersEventScheduler implements Listener {
 
     @EventHandler
     public void onPlayerJoinEvent(PlayerJoinEvent event) {
+        CwRBetterConsoleLogger.debug("PlayerJoinEvent executing..(HoldersEventScheduler.onPlayerJoinEvent)");
         _login_time_cash = System.currentTimeMillis();
     }
 
     @EventHandler
     public void onPlayerQuiteEvent(PlayerQuitEvent event) {
+        CwRBetterConsoleLogger.debug("PlayerQuitEvent executing..(HoldersEventScheduler.onPlayerQuiteEvent)");
         total_play_time += System.currentTimeMillis() - _login_time_cash;
         _login_time_cash = 0;
     }

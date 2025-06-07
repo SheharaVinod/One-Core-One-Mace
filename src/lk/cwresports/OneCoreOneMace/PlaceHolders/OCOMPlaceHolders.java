@@ -41,6 +41,12 @@ public class OCOMPlaceHolders extends PlaceholderExpansion {
             // Player requested_player = player.getPlayer();
             if (params.equalsIgnoreCase("ocom_mace_holder")) {
                 return MaceHolder.getOfflinePlayersName();
+            } else if (params.equalsIgnoreCase("ocom_heavy_core_drop_event")) {
+                if (MaceHolder.is_cansel_heavy_core_drop_event()) {
+                    return "Disabled";
+                } else {
+                    return "Enabled";
+                }
             }
         }
         return null;

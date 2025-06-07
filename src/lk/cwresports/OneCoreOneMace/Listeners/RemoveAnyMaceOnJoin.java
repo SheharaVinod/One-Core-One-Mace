@@ -2,6 +2,7 @@ package lk.cwresports.OneCoreOneMace.Listeners;
 
 import lk.cwresports.OneCoreOneMace.Core.MaceHolder;
 import lk.cwresports.OneCoreOneMace.Utils.ConfigPaths;
+import lk.cwresports.OneCoreOneMace.Utils.CwRBetterConsoleLogger;
 import lk.cwresports.OneCoreOneMace.Utils.CwRPermissionManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -16,6 +17,7 @@ public class RemoveAnyMaceOnJoin implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
+        CwRBetterConsoleLogger.debug("PlayerJoinEvent executing..(RemoveAnyMaceOnJoin.onJoin)");
         if (we_need_to_remove_the_mace_on_join()) {
             if (CwRPermissionManager.hasHolderBypass(event.getPlayer())) {
                 return;

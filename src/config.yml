@@ -8,7 +8,14 @@
 # -----------------------------------
 # available placeHolders. {
 #   %cwr_ocom_mace_holder%
+#   %cwr_ocom_heavy_core_drop_event%
 # }
+########################################
+# NOTE : when unload the plugin it
+#        saves its config automatically.
+#        don't forget to unload plugin
+#        before edit the config.
+########################################
 # One core one mace plugin config.
 general-plugin-settings:
   how-long-a-holder-can-be-offline-in-minutes: 2160 # 1 day and 6 hours.
@@ -19,6 +26,7 @@ general-plugin-settings:
   remove-extra-mace-on-join: true
   remove-extra-mace-on-clicking-inventory: true
   remove-extra-mace-on-using: false # recommend to turn off this.
+  debug_mod: false # this is only use for debug. always should be false.
 
 # please don't change this details.
 mace-holder-details:

@@ -26,6 +26,14 @@ public class OneCoreOneMace extends JavaPlugin {
 
         // Load text Strings.
         String prefix = getConfig().getString(ConfigPaths.PREFIX_PATH, ConfigPaths.PREFIX_PATH_DEFAULT);
+
+        try {
+            Class.forName("lk.cwresports.OneCoreOneMace.Utils.TextStrings");
+            Class.forName("lk.cwresports.OneCoreOneMace.Utils.CwRBetterConsoleLogger");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         CwRBetterConsoleLogger.registerLogger(this, prefix);
         TextStrings.loadTextStringsFromConfigs(this);
 
@@ -39,12 +47,15 @@ public class OneCoreOneMace extends JavaPlugin {
         Objects.requireNonNull(getCommand(CwRCommandManager.ONE_CORE_ONE_MACE)).setTabCompleter(new OneCoreOneMaceTab());
 
         // register events.
+        HoldersEventScheduler.register(this);
+
         GeneralEvents.register(this);
         MaceDropAndPickUpEventListener.register(this);
         RemoveAnyMaceOnJoin.register(this);
         RemoveAnyMaceOnClickingInventory.register(this);
         RemoveAnyMaceOnUsing.register(this);
         SendMassagesUsingAPI.register(this);
+        RemoveExtraMaceOnCrafting.register(this);
 
         CwRBetterConsoleLogger.log("-----------------------------------");
         CwRBetterConsoleLogger.log("  ██████╗██╗    ██╗██████╗");
@@ -57,7 +68,6 @@ public class OneCoreOneMace extends JavaPlugin {
         CwRBetterConsoleLogger.log("----------One-Core-One-Mace--------");
         CwRBetterConsoleLogger.log("-----------------------------------");
 
-        HoldersEventScheduler.register(this);
         registerOtherPlugins();
     }
 

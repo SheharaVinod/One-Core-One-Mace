@@ -5,6 +5,7 @@ import lk.cwresports.OneCoreOneMace.Utils.ConfigPaths;
 import lk.cwresports.OneCoreOneMace.Utils.CwRCommandManager;
 import lk.cwresports.OneCoreOneMace.Utils.CwRPermissionManager;
 import lk.cwresports.OneCoreOneMace.Utils.TextStrings;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -53,15 +54,29 @@ public class OneCoreOneMaceCommand implements CommandExecutor {
 
     private boolean drop_heavy_core(CommandSender commandSender, Command command, String s, String[] strings) {
         // Enable or disable
-        // MaceHolder.cansel_heavy_core_drop_event(TODO:\);
+        if (strings.length > 1) {
+            if (strings[1].equalsIgnoreCase(CwRCommandManager.enable)) {
+                MaceHolder.cansel_heavy_core_drop_event(false);
+            }
 
+            if (strings[1].equalsIgnoreCase(CwRCommandManager.disable)) {
+                MaceHolder.cansel_heavy_core_drop_event(true);
+            }
+        }
         return true;
     }
 
     private boolean change_mace_holder(CommandSender commandSender, Command command, String s, String[] strings) {
         // to given name.
-
-
+        if (strings.length > 1) {
+            try {
+                Player player = Bukkit.getPlayer(strings[1]);
+                if (player == null) return true;
+                MaceHolder.setOfflineMaceHolderAlsoForConfig(player);
+            } catch (Exception e) {
+                return false;
+            }
+        }
         return true;
     }
 

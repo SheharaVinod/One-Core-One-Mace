@@ -7,5 +7,6 @@ public class CwRCommandManager {
     public static final String reset_mace_holder = "reset_mace_holder";
     public static final String remove_extra_mace_on = "remove_extra_mace_on";
 
-
+    public static final String enable = "enable";
+    public static final String disable = "disable";
 }
