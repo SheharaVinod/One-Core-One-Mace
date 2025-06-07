@@ -177,83 +177,83 @@ public class GeneralEvents implements Listener {
         });
     }
 
-    @EventHandler
-    public void ifSomeOtherPlayerGetTheMaceOrHeavyCore(EntityPickupItemEvent event) {
-        CwRBetterConsoleLogger.debug("EntityPickupItemEvent executing..(General Event)");
-        if (!(event.getEntity() instanceof Player player)) return;
-        ItemStack itemStack = event.getItem().getItemStack();
-        // check it is a mace or a heavy core.
-        if (!(itemStack.getType() == Material.MACE || itemStack.getType() == Material.HEAVY_CORE)) return;
+//    @EventHandler
+//    public void ifSomeOtherPlayerGetTheMaceOrHeavyCore(EntityPickupItemEvent event) {
+//        CwRBetterConsoleLogger.debug("EntityPickupItemEvent executing..(General Event)");
+//        if (!(event.getEntity() instanceof Player player)) return;
+//        ItemStack itemStack = event.getItem().getItemStack();
+//        // check it is a mace or a heavy core.
+//        if (!(itemStack.getType() == Material.MACE || itemStack.getType() == Material.HEAVY_CORE)) return;
+//
+//        // now we know mace holder is changed.
+//        if (MaceHolder.getOfflinePlayer() != player) {
+//            if (MaceHolder.isMaceDropped()) {
+//
+//                ItemMeta itemMeta = itemStack.getItemMeta();
+//                if (itemMeta == null) return;
+//                PersistentDataContainer dataContainer = itemMeta.getPersistentDataContainer();
+//                NamespacedKey namespacedKey = new NamespacedKey(plugin, CwRNameSpaceKeys.CWR_MACE_HOLDER);
+//                if (dataContainer.has(namespacedKey, PersistentDataType.STRING)) {
+//                    UUID current_players_uuid = player.getUniqueId();
+//                    dataContainer.set(namespacedKey, PersistentDataType.STRING, current_players_uuid.toString());
+//                    itemStack.setItemMeta(itemMeta);
+//                } else {
+//                    return;
+//                }
+//
+//                MaceHolder.setAsDropped(false);
+//                MaceHolder.setOfflineMaceHolderAlsoForConfig(player);
+//            }
+//        }
+//    }
 
-        // now we know mace holder is changed.
-        if (MaceHolder.getOfflinePlayer() != player) {
-            if (MaceHolder.isMaceDropped()) {
+//    @EventHandler
+//    public void onInventoryClickByAnotherPlayer(InventoryClickEvent event) {
+//        ItemStack currentItem = event.getCurrentItem();
+//        if (!(event.getWhoClicked() instanceof Player clickedPlayer)) {
+//            return;
+//        }
+//
+//        if (currentItem == null) {
+//            return;
+//        }
+//
+//        if (clickedPlayer == MaceHolder.getOfflinePlayer()) return;
+//
+//        if (MaceHolder.getOfflinePlayer() != null && MaceHolder.getOfflinePlayer().isOnline()) {
+//            Player maceHolder = MaceHolder.getOfflinePlayer().getPlayer();
+//            if (maceHolder != null) {
+//                if (!maceHolder.getInventory().contains(Material.MACE)) {
+//                    MaceHolder.setAsDropped(true);
+//                }
+//
+//                if (currentItem.getType() == Material.MACE) {
+//                    MaceHolder.setOfflineMaceHolderAlsoForConfig(clickedPlayer);
+//                }
+//            }
+//        }
+//    }
 
-                ItemMeta itemMeta = itemStack.getItemMeta();
-                if (itemMeta == null) return;
-                PersistentDataContainer dataContainer = itemMeta.getPersistentDataContainer();
-                NamespacedKey namespacedKey = new NamespacedKey(plugin, CwRNameSpaceKeys.CWR_MACE_HOLDER);
-                if (dataContainer.has(namespacedKey, PersistentDataType.STRING)) {
-                    UUID current_players_uuid = player.getUniqueId();
-                    dataContainer.set(namespacedKey, PersistentDataType.STRING, current_players_uuid.toString());
-                    itemStack.setItemMeta(itemMeta);
-                } else {
-                    return;
-                }
-
-                MaceHolder.setAsDropped(false);
-                MaceHolder.setOfflineMaceHolderAlsoForConfig(player);
-            }
-        }
-    }
-
-    @EventHandler
-    public void onInventoryClickByAnotherPlayer(InventoryClickEvent event) {
-        ItemStack currentItem = event.getCurrentItem();
-        if (!(event.getWhoClicked() instanceof Player clickedPlayer)) {
-            return;
-        }
-
-        if (currentItem == null) {
-            return;
-        }
-
-        if (clickedPlayer == MaceHolder.getOfflinePlayer()) return;
-
-        if (MaceHolder.getOfflinePlayer() != null && MaceHolder.getOfflinePlayer().isOnline()) {
-            Player maceHolder = MaceHolder.getOfflinePlayer().getPlayer();
-            if (maceHolder != null) {
-                if (!maceHolder.getInventory().contains(Material.MACE)) {
-                    MaceHolder.setAsDropped(true);
-                }
-
-                if (currentItem.getType() == Material.MACE) {
-                    MaceHolder.setOfflineMaceHolderAlsoForConfig(clickedPlayer);
-                }
-            }
-        }
-    }
-
-    @EventHandler
-    public void onPlayerQuiteTheGame(PlayerQuitEvent event) {
-        Player player = event.getPlayer();
-        if (player == MaceHolder.getOfflinePlayer()) {
-            HoldersEventScheduler.saveData();
-            if (!player.getInventory().contains(Material.MACE)) {
-                MaceHolder.setAsDropped(true);
-            }
-        }
-    }
-
-    @EventHandler
-    public void onPlayerJoinToTheGame(PlayerJoinEvent event) {
-        Player player = event.getPlayer();
-        if (player == MaceHolder.getOfflinePlayer()) {
-            if (!player.getInventory().contains(Material.MACE)) {
-                MaceHolder.setAsDropped(true);
-            }
-        }
-    }
+//    @EventHandler
+//    public void onPlayerQuiteTheGame(PlayerQuitEvent event) {
+//        Player player = event.getPlayer();
+//        if (player == MaceHolder.getOfflinePlayer()) {
+//            HoldersEventScheduler.saveData();
+//            if (!player.getInventory().contains(Material.MACE)) {
+//                MaceHolder.setAsDropped(true);
+//            }
+//        }
+//    }
+//
+//    @EventHandler
+//    public void onPlayerJoinToTheGame(PlayerJoinEvent event) {
+//        Player player = event.getPlayer();
+//        if (player == MaceHolder.getOfflinePlayer()) {
+//            if (!player.getInventory().contains(Material.MACE)) {
+//                MaceHolder.setAsDropped(true);
+//            }
+//        }
+//    }
 
     public static void register(Plugin plugin) {
         GeneralEvents.plugin = plugin;

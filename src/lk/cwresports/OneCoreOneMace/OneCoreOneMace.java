@@ -87,6 +87,8 @@ public class OneCoreOneMace extends JavaPlugin {
     public void onDisable() {
         saveConfig();
         HoldersEventScheduler.saveData();
+
+        MaceDropAndPickUpEventListener.canselRunnable();
         HoldersEventScheduler.canselTimer();
     }
 

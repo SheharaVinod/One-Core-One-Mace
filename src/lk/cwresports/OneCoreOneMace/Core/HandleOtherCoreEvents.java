@@ -18,16 +18,16 @@ public class HandleOtherCoreEvents implements Listener {
         }));
     }
 
-    @EventHandler
-    public void onMaceHolderChangeEvent(MaceHolderChangeEvent event) {
-        if (event.getNewHolder() != null) {
-            if (event.getNewHolder().isOnline()) {
-                Player player = event.getNewHolder().getPlayer();
-                if (player == null) return;
-                if (!player.getInventory().contains(Material.MACE)) {
-                    MaceHolder.setAsDropped(true);
-                }
-            }
-        }
-    }
+//    @EventHandler
+//    public void onMaceHolderChangeEvent(MaceHolderChangeEvent event) {
+//        if (event.getNewHolder() != null) {
+//            if (event.getNewHolder().isOnline()) {
+//                Player player = event.getNewHolder().getPlayer();
+//                if (player == null) return;
+//                if (!player.getInventory().contains(Material.MACE)) {
+//                    MaceHolder.setAsDropped(true);
+//                }
+//            }
+//        }
+//    }
 }
